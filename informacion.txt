@@ -1,0 +1,4 @@
+Niveles de usuario:
+	0 - Administrador Global
+	1 -
+	2 -

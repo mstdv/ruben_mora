@@ -1,0 +1,1 @@
+C:\xampp\htdocs\mundoapuesta365\app/views/equipos/index.blade.php

@@ -1,0 +1,1 @@
+C:\xampp\htdocs\trabajo\Dropbox\mundoapuesta365\app/views/tikets/show.blade.php

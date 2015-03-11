@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - mundoapuesta365@localhost" uuid="00578062-4d5f-4d2b-819a-38d41db353f5">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>mundoapuesta365.*</schema-pattern>
+      <default-schemas>mundoapuesta365.*</default-schemas>
+    </data-source>
+  </component>
+</project>
+

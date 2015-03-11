@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - mundoapuesta365@localhost" uuid="00578062-4d5f-4d2b-819a-38d41db353f5">
+    <database-info product="MySQL" version="5.6.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="mundoapuesta365"/>
+    <table name="apuestas" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="configs" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="op1" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="op2" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="op3" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="op4" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="exoticas_ab_home_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_ab_home_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_ab_home_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_quienanotaprimero_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_quienanotaprimero_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_totalche_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_totalche_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_totalche_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="deportes" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nombre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="logro_referencia" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="deportes_logro_referencia_unique" unique="true" columns="logro_referencia"/>
+      <index name="deportes_nombre_unique" unique="true" columns="nombre"/>
+    </table>
+    <table name="equipos" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="liga_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nombre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="equipos_nombre_unique" unique="true" columns="nombre"/>
+    </table>
+    <table name="grupos" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nombre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="descripcion" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="ligas" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="deporte_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nombre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="ligas_nombre_unique" unique="true" columns="nombre"/>
+    </table>
+    <table name="limites" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="acepta_derecho" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="maximo_parlays" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="minimo_parlays" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="maximo_hembras" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="max_monto_der" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="max_monto_par" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="max_der_perder" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="max_premio" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="logros" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="deporte_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="liga_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="equipo1" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="equipo2" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="referencia_equipo1" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="referencia_equipo2" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pitcher_equipo1" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pitcher_equipo1text" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pitcher_equipo2" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pitcher_equipo2text" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="fecha_partido" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="hora_partido" sqlType="TIME" precision="8" scale="0" nullable="false" jdbcType="92"/>
+      <column name="estado" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="completo_aganar_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_aganar_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_runline_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_runline_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_runline_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_runline_d" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_super_runline_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_super_runline_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_super_runline_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_super_runline_d" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_altabaja_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_altabaja_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_altabaja_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_empate" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_aganar_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_aganar_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_runline_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_runline_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_runline_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_runline_d" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_altabaja_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_altabaja_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_altabaja_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_empate" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_ab_visitante_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_ab_visitante_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_ab_visitante_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_ab_home_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_ab_home_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_ab_home_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_quienanotaprimero_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_quienanotaprimero_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_totalche_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_totalche_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_totalche_c" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="carreras_primer_inn_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="carreras_primer_inn_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="migrations" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="migration" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="batch" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="pitchers" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="equipo_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nombre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="pitchers_nombre_unique" unique="true" columns="nombre"/>
+    </table>
+    <table name="restriccions" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="deporte_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="restriccion" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="resultados" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="updated_at" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="logro_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="liga_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="mitad_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="mitad_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_a" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="completo_b" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="exoticas_quienanotaprimero" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="exoticas_totalche" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="carreras_primer_inn" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="tikets" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="monto" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="premio" sqlType="FLOAT" precision="8" scale="2" nullable="false" jdbcType="7"/>
+      <column name="estado" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pago" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="fecha_de_apuesta" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="tikets_jugadas" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tiket_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="logro_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="referencia_equipo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="referencia_jugada" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="logro_calc" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="users" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="grupo_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nombre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="apellido" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cedula" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="direccion" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ciudad" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telefono" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dueno" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="banco" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="numero_cuenta" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="usuario" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="rol" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12" def="JzIn"/>
+      <column name="estado" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12" def="JzEn"/>
+      <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="users_email_unique" unique="true" columns="email"/>
+      <index name="users_usuario_unique" unique="true" columns="usuario"/>
+    </table>
+    <table name="ventas" schema="" catalog="mundoapuesta365" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tiket_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="fecha_de_venta" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>

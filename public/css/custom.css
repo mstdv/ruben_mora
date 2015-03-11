@@ -1,0 +1,125 @@
+﻿/* ------------------Put your custom code here--------------------*/
+
+.control-label {font-weight: bold;}
+form .control-group:last-child {margin-bottom: 0;}
+form .control-group .controls-row {	margin-bottom: 5px;}
+form .control-group .controls-row textarea {margin-bottom: 15px;}
+form .control-group .controls-row .btn.special {margin-left: 10px;}
+
+@media only screen and (max-width: 1360px) {
+	/* ------------------ Form styles --------------------*/
+	[class*="span6"] form .control-group .control-label {width: 120px;}
+	[class*="span6"] form .control-group .controls {margin-left: 150px;}
+}
+
+@media only screen and (max-width: 1280px) {
+	/* ------------------ Form styles --------------------*/
+	[class*="span6"] form .control-group .control-label {width: 100%; text-align: left;margin-bottom: 5px;}
+	[class*="span6"] form .control-group .controls {margin-left: 0;}
+	[class*="span6"] form .control-group {margin-bottom: 10px;}
+	[class*="span6"] form .form-actions {padding-left: 20px;}
+}
+
+@media only screen and (max-width: 767px) {
+	/* ------------------ Form styles--------------------*/
+	form .control-group [class*="span"] {margin-bottom: 10px !important;}
+	form .control-group .control-label {width: 100%; text-align: left;margin-bottom: 5px;}
+	form .control-group .controls {margin-left: 0;}
+	form .control-group {margin-bottom: 10px;}
+	form .form-actions {padding-left: 20px;}
+	form .control-group .controls-row [class*="span"] {margin-left: 0 !important;}
+	form .control-group .controls-row .btn.special {margin-left: 0px;}
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: 0;
+}
+
+table {
+  background-color: transparent;
+}
+th {
+  text-align: left;
+}
+
+.tablex1 > thead > tr > th,
+.tablex1 > tbody > tr > th,
+.tablex1 > tfoot > tr > th,
+.tablex1 > thead > tr > td,
+.tablex1 > tbody > tr > td,
+.tablex1 > tfoot > tr > td {
+  padding: 2px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.tablex1 > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.tablex1 > caption + thead > tr:first-child > th,
+.tablex1 > colgroup + thead > tr:first-child > th,
+.tablex1 > thead:first-child > tr:first-child > th,
+.tablex1 > caption + thead > tr:first-child > td,
+.tablex1 > colgroup + thead > tr:first-child > td,
+.tablex1 > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.tablex1 > tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.tablex1 .tablex1 {
+  background-color: #fff;
+}
+.tablex1-condensed > thead > tr > th,
+.tablex1-condensed > tbody > tr > th,
+.tablex1-condensed > tfoot > tr > th,
+.tablex1-condensed > thead > tr > td,
+.tablex1-condensed > tbody > tr > td,
+.tablex1-condensed > tfoot > tr > td {
+  padding: 2px;
+}
+.tablex1-bordered {
+  border: 1px solid #ddd;
+}
+.tablex1-bordered > thead > tr > th,
+.tablex1-bordered > tbody > tr > th,
+.tablex1-bordered > tfoot > tr > th,
+.tablex1-bordered > thead > tr > td,
+.tablex1-bordered > tbody > tr > td,
+.tablex1-bordered > tfoot > tr > td {
+  border: 1px solid #ddd;
+}
+.tablex1-bordered > thead > tr > th,
+.tablex1-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+
+.formradio {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #909090;
+}
+
+.formradio .xx {
+	margin-top:-7px;
+}
+
+.formradio td {
+	margin-bottom: 0;
+}
+
+.formradio .ff {
+	width: 100% !important;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+  border-top: #363636 solid dotted;
+}

@@ -1,0 +1,1 @@
+C:\xampp\htdocs\mundoapuesta365\app/views/pitchers/show.blade.php

@@ -1,0 +1,1 @@
+C:\xampp\htdocs\trabajo\Dropbox\mundoapuesta365\app/views/restriccions/edit.blade.php
