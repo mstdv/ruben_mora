@@ -39,8 +39,8 @@
     <link href="{{URL::to('/')}}/css/icons.css" rel="stylesheet" type="text/css" />
 
     <!-- Plugin stylesheets -->
-    <link href="plugins/misc/qtip/jquery.qtip.css" rel="stylesheet" type="text/css" />
-    <link href="plugins/forms/uniform/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="/plugins/misc/qtip/jquery.qtip.css" rel="stylesheet" type="text/css" />
+    <link href="/plugins/forms/uniform/uniform.default.css" type="text/css" rel="stylesheet" />
 
     <!-- Main stylesheets -->
     <link href="{{URL::to('/')}}/css/main.css" rel="stylesheet" type="text/css" />
@@ -58,11 +58,11 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57-precomposed.png" />
 
     <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
     <meta name="application-name" content="Supr"/>

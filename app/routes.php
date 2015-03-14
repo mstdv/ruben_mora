@@ -6,6 +6,9 @@ Route::group(array('after' => 'auth'), function() {
 	Route::get('login', ['uses' => 'SessionController@index']);
 	Route::post('login', ['uses' => 'SessionController@create']);
 
+	Route::resource('gastos', 'GastosTaquillasController');
+	Route::get('gastos/change/{id}', 'GastosTaquillasController@change');
+
 });
 
 Route::group(array('before' => 'auth'), function() {

@@ -714,5 +714,3 @@ class ApuestasController extends \BaseController {
 
 
 }
-
-

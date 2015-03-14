@@ -150,15 +150,18 @@
                 <li><a href="{{URL::to('/configs')}}"><span class="icon16 icomoon-icon-arrow-right-3"></span>
                     Reportar Tikets
                 </a></li>
+                <li>
+                    <a href="{{URL::to('/gastos')}}">
+                        <span class="icon16 icomoon-icon-arrow-right-3"></span>
+                        Gastos de Taquilla
+                    </a>
+                </li>
             </ul>
         </li>
 
     </ul>
 
-
     @endif
-
-
 
 </div>
 
