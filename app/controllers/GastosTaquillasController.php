@@ -10,7 +10,7 @@ class GastosTaquillasController extends \BaseController {
 	 */
 	public function index()
 	{
-		$g = GastosTaquilla::all();
+		$g = GastosTaquilla::where("fecha", Date("Y-m-d"))->get();
 		$total = GastosTaquilla::where("status", 1)->where("fecha", Date("Y-m-d"))->sum("monto");
 		return View::make("gastos_taquillas.index", ["gastos" => $g, "total" => $total]);
 	}
@@ -149,7 +149,45 @@ class GastosTaquillasController extends \BaseController {
 		}
 
 		$g->save();
-		return Redirect::back();
+		return Redirect::to("gastos");
+	}
+
+	public function buscarFecha()
+	{
+		$rules = [
+			"fecha 1" => ["required", "regex:/^(\d){4}-(\d){2}-(\d){2}$/"],
+			"fecha 2" => ["required", "regex:/^(\d){4}-(\d){2}-(\d){2}$/"],
+		];
+
+		$va = [
+			"fecha 1" => Input::get("f1"),
+			"fecha 2" => Input::get("f2")
+		];
+
+		$v = Validator::make($va, $rules);
+
+		if($v->fails()){
+
+			Session::flash("msj", $v->messages()->all());
+			return Redirect::back()->withErrors($v)->withInput();
+		}else{
+			$g = [
+				e(Input::get("f1")),
+				e(Input::get("f2"))
+			];
+			$gastos = GastosTaquilla::whereBetween("fecha", $g)->get();
+
+			$total = 0;
+
+			foreach ($gastos as $a) {
+				if($a->status != "0"){
+
+					$total += $a->monto;
+				}
+			}
+
+			return View::make("gastos_taquillas.index", ["gastos" => $gastos, "total" => $total]);
+		}
 	}
 
 }

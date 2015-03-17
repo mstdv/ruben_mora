@@ -8,6 +8,7 @@ Route::group(array('after' => 'auth'), function() {
 
 	Route::resource('gastos', 'GastosTaquillasController');
 	Route::get('gastos/change/{id}', 'GastosTaquillasController@change');
+	Route::post('gastos/fecha', 'GastosTaquillasController@buscarFecha');
 
 });
 

@@ -273,6 +273,7 @@ return array(
     'File_X509' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/X509.php',
     'GastosTaquilla' => $baseDir . '/app/models/GastosTaquilla.php',
     'GastosTaquillasController' => $baseDir . '/app/controllers/GastosTaquillasController.php',
+    'GastosTaquillasTableSeeder' => $baseDir . '/app/database/seeds/GastosTaquillasTableSeeder.php',
     'Grupo' => $baseDir . '/app/models/Grupo.php',
     'GruposController' => $baseDir . '/app/controllers/GruposController.php',
     'GruposTableSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
