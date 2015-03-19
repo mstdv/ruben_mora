@@ -10,9 +10,38 @@ class GastosTaquillasController extends \BaseController {
 	 */
 	public function index()
 	{
-		$g = GastosTaquilla::where("fecha", Date("Y-m-d"))->get();
-		$total = GastosTaquilla::where("status", 1)->where("fecha", Date("Y-m-d"))->sum("monto");
-		return View::make("gastos_taquillas.index", ["gastos" => $g, "total" => $total]);
+		if(Auth::user()->rol == 2){
+
+			$taquillas = User::where("id", "!=", Auth::user()->id)
+				->where("grupo_id", Auth::user()->grupo_id)->get();
+
+			$g = array();
+			$totalHoy = 0;
+			$total = 0;
+
+			foreach($taquillas as $a){
+
+				$totalHoy += GastosTaquilla::where("user_id", $a->id)
+					->where("status", 1)->where("fecha", Date("Y-m-d"))->sum("monto");
+				$total += GastosTaquilla::where("user_id", $a->id)->sum("monto");
+			}
+			return View::make("gastos_taquillas.index", [
+				"totalHoy" => $totalHoy,
+				"total" => $total,
+				"taquillas" => $taquillas]);
+
+		}else if(Auth::user()->rol == 3){
+
+			$g = GastosTaquilla::where("user_id", Auth::user()->id)->where("fecha", Date("Y-m-d"))->get();
+			$totalHoy = GastosTaquilla::where("user_id", Auth::user()->id)
+				->where("status", 1)->where("fecha", Date("Y-m-d"))->sum("monto");
+			$total = GastosTaquilla::where("user_id", Auth::user()->id)->sum("monto");
+
+			return View::make("gastos_taquillas.index", [
+				"gastos" 	=> $g,
+				"totalHoy" 	=> $totalHoy,
+				"total" 	=> $total]);
+		}
 	}
 
 	/**
@@ -54,7 +83,17 @@ class GastosTaquillasController extends \BaseController {
 
 		}else{
 
-			GastosTaquilla::create(Input::all());
+			$g = new GastosTaquilla();
+
+			$g->user_id 	= Auth::user()->id;
+			$g->tipo_gasto 	= Input::get("tipo_gasto");
+			$g->fecha 		= Input::get("fecha");
+			$g->n_factura 	= Input::get("n_factura");
+			$g->monto 		= Input::get("monto");
+			$g->status 		= Input::get("status");
+
+			$g->save();
+
 			return Redirect::to("gastos");
 		}
 	}
@@ -175,7 +214,8 @@ class GastosTaquillasController extends \BaseController {
 				e(Input::get("f1")),
 				e(Input::get("f2"))
 			];
-			$gastos = GastosTaquilla::whereBetween("fecha", $g)->get();
+			$gastos = GastosTaquilla::where("user_id", Auth::user()->id)->whereBetween("fecha", $g)
+				->orderBy("fecha", "desc")->get();
 
 			$total = 0;
 
@@ -186,7 +226,13 @@ class GastosTaquillasController extends \BaseController {
 				}
 			}
 
-			return View::make("gastos_taquillas.index", ["gastos" => $gastos, "total" => $total]);
+			$totalHoy = GastosTaquilla::where("user_id", Auth::user()->id)
+				->where("status", 1)->where("fecha", Date("Y-m-d"))->sum("monto");
+
+			return View::make("gastos_taquillas.index", [
+				"gastos" 	=> $gastos,
+				"totalHoy"	=> $totalHoy,
+				"total" 	=> $total]);
 		}
 	}
 

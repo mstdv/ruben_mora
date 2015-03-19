@@ -30,23 +30,23 @@
         </li>
 
         <li>
-	        <a href="#"><span class="icon16 icomoon-icon-table-2"></span>Gestion de juegos</a>
-	        <ul class="sub">
-	        	<li><a href="{{URL::to('/equipos-ligas')}}"><span class="icon16 icomoon-icon-arrow-right-3"></span>
-					Dep., ligas y equipos
-	            </a></li>
-	            <li><a href="{{URL::to('/logros')}}"><span class="icon16 icomoon-icon-arrow-right-3"></span>
-					Logros
-	            </a></li>
-	            <li><a href="{{URL::to('/resultados')}}"><span class="icon16 icomoon-icon-arrow-right-3"></span>
+            <a href="#"><span class="icon16 icomoon-icon-table-2"></span>Gestion de juegos</a>
+            <ul class="sub">
+                <li><a href="{{URL::to('/equipos-ligas')}}"><span class="icon16 icomoon-icon-arrow-right-3"></span>
+                    Dep., ligas y equipos
+                </a></li>
+                <li><a href="{{URL::to('/logros')}}"><span class="icon16 icomoon-icon-arrow-right-3"></span>
+                    Logros
+                </a></li>
+                <li><a href="{{URL::to('/resultados')}}"><span class="icon16 icomoon-icon-arrow-right-3"></span>
                     Resultados
                 </a></li>
-	            <li><a href=""><span class="icon16 icomoon-icon-arrow-right-3"></span>
-					Cierre Diario
-	            </a></li>
+                <li><a href=""><span class="icon16 icomoon-icon-arrow-right-3"></span>
+                    Cierre Diario
+                </a></li>
 
-	        </ul>
-	    </li>
+            </ul>
+        </li>
     </ul>
 
 
@@ -110,6 +110,28 @@
         </div>
 
     </div><!-- End .sidenav-widget -->
+
+    @elseif(Auth::user()->rol == 2)
+
+    <ul>
+       <li>
+            <a href="#"><span class="icon16 icomoon-icon-profile"></span>Mi cuenta</a>
+            <ul class="sub">
+                <li><a href="{{URL::to('/users/info/'.Auth::user()->id)}}"><span class="icon16 icomoon-icon-arrow-right-3"></span>
+                    Informacion
+                </a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="/gastos">
+                <span class="icon16 icomoon-icon-queen"></span>
+                Gastos de Taquillas
+            </a>
+        <li>
+        </li>
+
+    </ul>
 
     @elseif(Auth::user()->rol == 3)
 

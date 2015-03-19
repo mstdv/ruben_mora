@@ -59,6 +59,17 @@ Route::filter('authAdmin', function()
 	}
 });
 
+Route::filter('authBanca', function()
+{
+    if (Auth::check()) {
+        if (Auth::user()->rol != 2) {
+            return Redirect::to('/');
+        }
+    } else {
+        return Redirect::guest('login');
+    }
+});
+
 
 Route::filter('auth.basic', function()
 {

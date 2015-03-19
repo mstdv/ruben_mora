@@ -35,19 +35,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 				break;
 
 			case 2:
-				return 'Promotor';
+				return 'Banca';
 				break;
 
 			case 3:
-				return 'Agencia';
-				break;
-
-			case 4:
 				return 'Taquilla';
 				break;
 
+			case 4:
+				return null;
+				break;
+
 			case 5:
-				return 'Usuario';
+				return null;
 				break;
 
 			default:

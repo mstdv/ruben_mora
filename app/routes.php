@@ -10,6 +10,8 @@ Route::group(array('after' => 'auth'), function() {
 	Route::get('gastos/change/{id}', 'GastosTaquillasController@change');
 	Route::post('gastos/fecha', 'GastosTaquillasController@buscarFecha');
 
+	Route::resource('mensajes', 'MensajesController');
+
 });
 
 Route::group(array('before' => 'auth'), function() {

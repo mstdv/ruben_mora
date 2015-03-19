@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateGastosTaquillasTable extends Migration {
+class CreateMensajesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,16 +12,13 @@ class CreateGastosTaquillasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('gastos_taquillas', function(Blueprint $table)
+		Schema::create('mensajes', function(Blueprint $table)
 		{
 			$table->increments('id');
 
-			$table->integer('user_id');
-			$table->string('tipo_gasto');
-			$table->date('fecha');
-			$table->integer('n_factura');
-			$table->integer('monto');
-			$table->integer('status');
+			$table->integer("de_id_user");
+			$table->integer("para_id_user");
+			$table->text("msj");
 
 			$table->timestamps();
 		});
@@ -35,7 +32,7 @@ class CreateGastosTaquillasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('gastos_taquillas');
+		Schema::drop('mensajes');
 	}
 
 }

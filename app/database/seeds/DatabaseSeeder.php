@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('GruposTableSeeder');
         $this->call('LimitesTableSeeder');
         $this->call('RestriccionsTableSeeder');
+        $this->call('GastosTaquillasTableSeeder');
 	}
 
 }
@@ -65,8 +66,27 @@ class UsersTableSeeder extends Seeder {
 		    'estado'			=> 1
 		));
 
+		DB::table('users')->insert(array(
+			'id'				=> 3,
+			'nombre'			=> 'Carluis',
+			'apellido'			=> 'Pateti',
+			'cedula'			=> 'V23732794',
+			'direccion'			=> 'Simón Bolívar, Calle Soublette',
+			'ciudad'			=> 'Bolívar',
+			'telefono'			=> '04165851084',
+			'dueno'				=> 0,
+			'grupo_id'			=> 0,
+			'banco'				=> 'Venezuela',
+			'numero_cuenta'		=> '0000-0000-00-0000000000',
+			'usuario'			=> 'carluis',
+			'email'				=> 'pateticarluis@gmail.com',
+			'password'			=> Hash::make('123456'),
+			'rol'				=> 2,
+			'estado'			=> 1
+			));
+
 		$faker = Faker\Factory::create();
-		for ($i = 3; $i <= 35; $i++)
+		for ($i = 4; $i <= 35; $i++)
 		{
 			DB::table('users')->insert(array(
 				'id'				=> $i,
@@ -380,6 +400,73 @@ class LogrosTableSeeder extends Seeder {
             $i=$i+1;
 		}
 
+	}
+
+}
+
+class GastosTaquillasTableSeeder extends Seeder {
+
+	public function run()
+	{
+		DB::table('gastos_taquillas')->insert(array(
+			'id'			=> 1,
+			'user_id'		=> 2,
+			'tipo_gasto'	=> 'askldj alks djkla djkj',
+			'fecha'			=> '2015-03-16',
+			'n_factura'		=> 146515413,
+			'monto'			=> 300,
+			'status'		=> 1
+			));
+
+		DB::table('gastos_taquillas')->insert(array(
+			'id'			=> 2,
+			'user_id'		=> 2,
+			'tipo_gasto'	=> 'askldj alks djkla djkj',
+			'fecha'			=> '2015-03-16',
+			'n_factura'		=> 444564541,
+			'monto'			=> 500,
+			'status'		=> 1
+			));
+
+		DB::table('gastos_taquillas')->insert(array(
+			'id'			=> 3,
+			'user_id'		=> 2,
+			'tipo_gasto'	=> 'askldj alks djkla djkj',
+			'fecha'			=> '2015-03-17',
+			'n_factura'		=> 211456454,
+			'monto'			=> 450,
+			'status'		=> 1
+			));
+
+		DB::table('gastos_taquillas')->insert(array(
+			'id'			=> 4,
+			'user_id'		=> 2,
+			'tipo_gasto'	=> 'askldj alks djkla djkj',
+			'fecha'			=> '2015-03-17',
+			'n_factura'		=> 5345442111,
+			'monto'			=> 1200,
+			'status'		=> 1
+			));
+
+		DB::table('gastos_taquillas')->insert(array(
+			'id'			=> 5,
+			'user_id'		=> 2,
+			'tipo_gasto'	=> 'askldj alks djkla djkj',
+			'fecha'			=> '2015-03-18',
+			'n_factura'		=> 21345454212,
+			'monto'			=> 1500,
+			'status'		=> 1
+			));
+
+		DB::table('gastos_taquillas')->insert(array(
+			'id'			=> 6,
+			'user_id'		=> 2,
+			'tipo_gasto'	=> 'askldj alks djkla djkj',
+			'fecha'			=> '2015-03-18',
+			'n_factura'		=> 2545645642,
+			'monto'			=> 50,
+			'status'		=> 1
+			));
 	}
 
 }
