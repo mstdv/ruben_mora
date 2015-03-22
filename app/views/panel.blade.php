@@ -283,7 +283,7 @@
         </script>
     @endif
 
-
+    <script type="text/javascript" src="{{URL::to('/')}}/js/func.js"></script>
 
     </body>
 </html>

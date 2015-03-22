@@ -15,4 +15,12 @@ class BaseController extends Controller {
 		}
 	}
 
+	protected function BdFecha($f){
+
+		$f = explode("/", $f);
+
+		return "$f[2]-$f[0]-$f[1]";
+
+	}
+
 }

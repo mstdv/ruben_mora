@@ -75,7 +75,7 @@ class UsersTableSeeder extends Seeder {
 			'ciudad'			=> 'Bolívar',
 			'telefono'			=> '04165851084',
 			'dueno'				=> 0,
-			'grupo_id'			=> 0,
+			'grupo_id'			=> 1,
 			'banco'				=> 'Venezuela',
 			'numero_cuenta'		=> '0000-0000-00-0000000000',
 			'usuario'			=> 'carluis',

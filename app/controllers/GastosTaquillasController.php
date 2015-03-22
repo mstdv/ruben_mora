@@ -66,12 +66,14 @@ class GastosTaquillasController extends \BaseController {
 		$rules 	= [
 			"tipo de gasto" => "required|min:3",
 			"N Factura" 	=> "required|min:5",
-			"Monto" 	=> "required|min:2"
+			"Monto" 		=> "required|min:2",
+			"fecha" 		=> ["required", "regex:/^(\d){2}\/{1}(\d){2}\/{1}(\d){4}$/"]
 		];
 		$values = [
 			"tipo de gasto" => Input::get("tipo_gasto"),
 			"N Factura" 	=> Input::get("n_factura"),
-			"Monto" 		=> Input::get("monto")
+			"Monto" 		=> Input::get("monto"),
+			"fecha" 		=> Input::get("fecha")
 		];
 
 		$v = Validator::make($values, $rules);
@@ -87,7 +89,7 @@ class GastosTaquillasController extends \BaseController {
 
 			$g->user_id 	= Auth::user()->id;
 			$g->tipo_gasto 	= Input::get("tipo_gasto");
-			$g->fecha 		= Input::get("fecha");
+			$g->fecha 		= $this->bdFecha(Input::get("fecha"));
 			$g->n_factura 	= Input::get("n_factura");
 			$g->monto 		= Input::get("monto");
 			$g->status 		= Input::get("status");
@@ -194,8 +196,8 @@ class GastosTaquillasController extends \BaseController {
 	public function buscarFecha()
 	{
 		$rules = [
-			"fecha 1" => ["required", "regex:/^(\d){4}-(\d){2}-(\d){2}$/"],
-			"fecha 2" => ["required", "regex:/^(\d){4}-(\d){2}-(\d){2}$/"],
+			"fecha 1" => ["required", "regex:/^(\d){2}\/{1}(\d){2}\/{1}(\d){4}$/"],
+			"fecha 2" => ["required", "regex:/^(\d){2}\/{1}(\d){2}\/{1}(\d){4}$/"],
 		];
 
 		$va = [
@@ -210,10 +212,18 @@ class GastosTaquillasController extends \BaseController {
 			Session::flash("msj", $v->messages()->all());
 			return Redirect::back()->withErrors($v)->withInput();
 		}else{
+
+			$f1 = e(Input::get("f1"));
+			$f2 = e(Input::get("f2"));
+
+			$f1 = $this->bdFecha($f1);
+			$f2 = $this->bdFecha($f2);
+
 			$g = [
-				e(Input::get("f1")),
-				e(Input::get("f2"))
+				$f1,
+				$f2
 			];
+
 			$gastos = GastosTaquilla::where("user_id", Auth::user()->id)->whereBetween("fecha", $g)
 				->orderBy("fecha", "desc")->get();
 

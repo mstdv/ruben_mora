@@ -17,7 +17,8 @@ class CreateMensajesTable extends Migration {
 			$table->increments('id');
 
 			$table->integer("de_id_user");
-			$table->integer("para_id_user");
+			$table->string("para_id");
+			$table->string("titulo");
 			$table->text("msj");
 
 			$table->timestamps();

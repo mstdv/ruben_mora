@@ -47,6 +47,12 @@
 
             </ul>
         </li>
+        <li>
+            <a href="{{URL::to('/mensajes')}}">
+                <span class="icon16 icomoon-icon-mail-2"></span>
+                Mensaje
+            </a>
+        </li>
     </ul>
 
 
@@ -130,6 +136,12 @@
             </a>
         <li>
         </li>
+        <li>
+            <a href="{{URL::to('/mensajes')}}">
+                <span class="icon16 icomoon-icon-mail-2"></span>
+                Mensaje
+            </a>
+        </li>
 
     </ul>
 
@@ -179,6 +191,13 @@
                     </a>
                 </li>
             </ul>
+        </li>
+
+        <li>
+            <a href="{{URL::to('/mensajes')}}">
+                <span class="icon16 icomoon-icon-mail-2"></span>
+                Mensaje
+            </a>
         </li>
 
     </ul>

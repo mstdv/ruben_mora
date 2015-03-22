@@ -39,8 +39,8 @@
 
 				<div class="form-group col-lg-3">
 					{{Form::text("fecha", Input::old('fecha'), [
-						"placeholder" => "Fecha",
-						"class" => "form-control fecha uniform-input text hasDatepicker"
+						"placeholder" => "mm/dd/aaaa",
+						"class" => "form-control fecha"
 					])}}
 				</div>
 
@@ -65,6 +65,15 @@
 				</div>
 
 			{{Form::close()}}
+
+			<script type="text/javascript">
+				$(function() {
+					$(".fecha").datepicker({
+					changeMonth: true,
+					changeYear: true
+					});
+				});
+        	</script>
 
 		</div>
 	</div>

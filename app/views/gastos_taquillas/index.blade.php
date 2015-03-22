@@ -36,23 +36,22 @@
 				])}}
 
 
-					<div class="col-lg-3">
-						<div class="form-group">
-							{{Form::text("f1", Input::old("f1"), [
-								"class" => "form-control fecha",
-								"placeholder" => "Desde dd/mm/aaaa"
-							])}}
-						</div>
+					<div class="col-lg-3 form-group">
+						{{Form::text("f1", Input::old("f1"), [
+							"class" => "form-control fecha",
+							"placeholder" => "Desde mm/dd/aaaa"
+						])}}
 					</div>
 
-					<div class="col-lg-3">
-						<div class="form-group">
-							{{Form::text("f2", Input::old("f2"), [
-								"class" => "form-control fecha",
-								"placeholder" => "Hasta dd/mm/aaaa"
-							])}}
-						</div>
+					<div class="col-lg-3 form-group">
+						{{Form::text("f2", Input::old("f2"), [
+							"class" => "form-control",
+							"placeholder" => "Hasta mm/dd/aaaa",
+							"id" => "fecha2"
+						])}}
 					</div>
+
+					
 					<div class="col-lg-3">
 						<button class="btn btn-primary">Buscar</button>
 					</div>
@@ -60,8 +59,20 @@
 
 					<a href="{{URL::to('gastos/create')}}" class="btn btn-warning">Nuevo Gasto</a>
 
-
 				{{Form::close()}}
+
+				<script type="text/javascript">
+					$(".fecha").datepicker({
+						changeMonth: true,
+						changeYear: true
+					});
+
+					$("#fecha2").datepicker({
+						changeMonth: true,
+						changeYear: true
+					});
+				</script>
+
 			@endif
 
 			<hr />
